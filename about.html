@@ -4,8 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | MindSpace</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:wght@400;600&family=Noto+Serif+Ethiopic:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://fonts.cdnfonts.com/css/itc-benguiat" rel="stylesheet" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -27,15 +31,24 @@
 
   <main>
     <section class="content fade-section">
-      <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1000&q=80" alt="Airheen and Francisca" class="banner" />
-      <h2>Why We Built MindSpace</h2>
-      <p>We’ve both faced sleepless nights, exam stress, and the constant pressure to perform. That’s why we built MindSpace — to give students a haven where balance, mental wellness, and productivity meet.</p>
-      <p>Through our journey, we learned that self-care isn’t selfish — it’s essential. This space is our way of helping others find calm and clarity amid the chaos.</p>
+      <div class="about-container">
+        <div class="about-text">
+          <h2>Why We Built MindSpace</h2>
+          <p>We’ve both faced sleepless nights, exam stress, and the constant pressure to perform. That’s why we built MindSpace — to give students a haven where balance, mental wellness, and productivity meet.</p>
+          <p>Through our journey, we learned that self-care isn’t selfish — it’s essential. This space is our way of helping others find calm and clarity amid the chaos.</p>
+        </div>
+
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1000&q=80" alt="Airheen and Francisca" />
+        </div>
+      </div>
     </section>
 
-    <section class="mission fade-section">
-      <h2>Our Mission</h2>
-      <p>To empower students to care for their minds as much as their grades — by fostering a culture of reflection, rest, and resilience.</p>
+    <section class="mission fade-section" style="background-image: url('https://images.unsplash.com/photo-1505483531331-2811e92e0b01?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
+      <div class="overlay-light">
+        <h2>Our Mission</h2>
+        <p>To empower students to care for their minds as much as their grades — by fostering a culture of reflection, rest, and resilience.</p>
+      </div>
     </section>
   </main>
 
@@ -43,10 +56,25 @@
     <p>© 2025 MindSpace by Airheen & Francisca | All rights reserved.</p>
   </footer>
 
+  <!-- JavaBunny Easter Egg -->
   <script>
-    const JavaBunny={hop:()=>console.log("🐇 JavaBunny sends peaceful study vibes!")};
-    console.log("%c🐇 JavaBunny says hi from About!","color:#728359;font-size:14px;");
-    setInterval(JavaBunny.hop,7000);
+    const JavaBunny = {
+      hop() {
+        console.log("🐇 JavaBunny: Keep calm and study on!");
+      }
+    };
+    console.log("%c🐇 JavaBunny hops by your console!","color:#97A97C;font-size:16px;font-family:'Cinzel Decorative'");
+    setInterval(JavaBunny.hop, 8000);
+
+    const faders = document.querySelectorAll(".fade-section");
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.2 });
+    faders.forEach(el => appearOnScroll.observe(el));
   </script>
 </body>
 </html>
