@@ -1,0 +1,164 @@
+:root {
+  --deep-green: #606F49;
+  --olive: #728359;
+  --sage: #849669;
+  --mint: #97A97C;
+  --light-mint: #A6B98B;
+  --pale-green: #B5C99A;
+  --soft-green: #C2D5AA;
+  --haze-green: #CFE1B9;
+  --light-haze: #DCEBCA;
+  --gold-accent: #d6c77d;
+}
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  margin: 0;
+  color: var(--deep-green);
+  background: linear-gradient(to bottom, #F8F9F5, var(--light-haze));
+  line-height: 1.8;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+header h1 {
+  font-family: 'ITC Benguiat', serif;
+  color: var(--deep-green);
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--olive);
+  font-weight: 600;
+  font-family: 'Cinzel', serif;
+  transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+  color: var(--gold-accent);
+  transform: scale(1.08);
+}
+
+/* Hero Section */
+.hero {
+  background: url('images/home_bg.jpg') no-repeat center center/cover;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.overlay {
+  background: linear-gradient(135deg, rgba(96,111,73,0.7), rgba(166,185,139,0.6));
+  padding: 3rem 4rem;
+  border-radius: 18px;
+  color: white;
+  max-width: 700px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.2);
+}
+
+.overlay h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.overlay p {
+  font-size: 1.3rem;
+  line-height: 1.9;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--sage);
+  color: white;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.btn:hover {
+  background-color: var(--gold-accent);
+  color: var(--deep-green);
+  transform: translateY(-4px);
+}
+
+/* Main Content */
+main {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.highlight {
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.07);
+  padding: 3rem;
+}
+
+.highlight h2 {
+  font-family: 'ITC Benguiat', serif;
+  color: var(--olive);
+  font-size: 2.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.highlight p {
+  font-size: 1.25rem;
+  color: var(--deep-green);
+  line-height: 2;
+}
+
+.impact-text {
+  font-family: 'Noto Serif Ethiopic', serif;
+  font-size: 1.4rem;
+  color: var(--mint);
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+
+/* Animations */
+.fade-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+
+.fade-section.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer */
+footer {
+  background-color: var(--light-haze);
+  text-align: center;
+  padding: 1.2rem;
+  color: var(--deep-green);
+  font-size: 0.95rem;
+  font-family: 'Noto Serif Ethiopic', serif;
+}

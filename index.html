@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindSpace | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:wght@400;600&family=Noto+Serif+Ethiopic:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/itc-benguiat" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>MindSpace</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+
+  <section class="hero parallax">
+    <div class="overlay">
+      <h2>Find Your Calm, Focus, and Flow</h2>
+      <p>Where students restore balance between study, stress, and self-care.</p>
+      <a class="btn" href="about.html">Explore More</a>
+    </div>
+  </section>
+
+  <main>
+    <section class="intro fade-section highlight">
+      <h2>We Understand You</h2>
+      <p>Hi! We’re <strong>Airheen and Francisca</strong>, and we know how challenging it can get to be a student today. MindSpace was born out of our own experiences of sleepless nights, burnout, and the pressure to perform. Here, you’ll find resources, stories, and motivation to manage stress, stay inspired, and thrive both mentally and academically.</p>
+      <p class="impact-text">Because taking care of your mind <em>is</em> part of success.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 MindSpace by Airheen & Francisca | All rights reserved.</p>
+  </footer>
+
+  <script>
+    const JavaBunny = {
+      hop() {
+        const bunnies = ["🐇", "✨", "🌿", "💫"];
+        console.log(bunnies[Math.floor(Math.random() * bunnies.length)] + " JavaBunny reminds you to take a mindful breath!");
+      }
+    };
+    console.log("%c🐇 Meet JavaBunny — your hidden friend in the code!","color:#97A97C;font-size:16px;font-family:'Cinzel Decorative'");
+    setInterval(JavaBunny.hop, 6000);
+
+    const faders = document.querySelectorAll(".fade-section");
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.2 });
+    faders.forEach(el => appearOnScroll.observe(el));
+  </script>
+</body>
+</html>
